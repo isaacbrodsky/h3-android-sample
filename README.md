@@ -1,5 +1,6 @@
 # Sample application for H3-Java on Android
 
+[![tests](https://github.com/isaacbrodsky/h3-android-sample/workflows/test/badge.svg)](https://github.com/isaacbrodsky/h3-android-sample/actions)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![H3-Java Version](https://img.shields.io/badge/h3-java-v4.1.1-blue.svg)](https://github.com/uber/h3-java/releases/tag/v4.1.1)
 
