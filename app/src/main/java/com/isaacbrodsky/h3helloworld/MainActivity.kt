@@ -16,7 +16,7 @@ import com.uber.h3core.H3Core
 
 class MainActivity : ComponentActivity() {
     companion object {
-        init TEST {
+        init {
             System.loadLibrary("h3helloworld")
         }
     }
