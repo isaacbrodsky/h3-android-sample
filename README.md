@@ -2,7 +2,6 @@
 
 <img align="right" src="./Screenshot.png" width="270" alt="Hello world screenshot" />
 
-<p align="left">
 [![Test](https://github.com/isaacbrodsky/h3-android-sample/actions/workflows/test.yaml/badge.svg)](https://github.com/isaacbrodsky/h3-android-sample/actions/workflows/test.yaml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
@@ -21,4 +20,3 @@ Licensed under the [Apache 2.0 License](./LICENSE).
 [H3](https://github.com/uber/h3) Copyright 2018 Uber Technologies Inc. (Apache 2.0 License)
 
 DGGRID Copyright (c) 2015 Southern Oregon University
-</p>
