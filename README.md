@@ -6,6 +6,8 @@
 
 This is a sample application for using H3-Java on Android. It was compiled with 4.1.1 (as of writing, the latest published version of h3-java.)
 
+[![Hello world screenshot](./Screenshot.png)]
+
 ## Notes
 
 * It was necessary to manually copy the libh3-java.so files from the distributed JAR into the applicable jniLibs directories in the project.
