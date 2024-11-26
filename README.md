@@ -5,7 +5,7 @@
 
 This is a sample application for using H3-Java on Android. It was compiled with [v4.1.1]((https://github.com/uber/h3-java/releases/tag/v4.1.1)) (as of writing, the latest published version of h3-java.)
 
-[![Hello world screenshot](./Screenshot.png)]
+<img src="./Screenshot.png" width="270" alt="Hello world screenshot" />
 
 ## Notes
 
