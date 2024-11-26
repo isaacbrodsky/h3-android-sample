@@ -7,10 +7,12 @@
 
 This is a sample application for using H3-Java on Android. It was compiled with [v4.1.1]((https://github.com/uber/h3-java/releases/tag/v4.1.1)) (as of writing, the latest published version of h3-java.)
 
-## Notes
+**Notes**
 
 * It was necessary to manually copy the libh3-java.so files from the distributed JAR into the applicable jniLibs directories in the project.
 * It was necessary to add an externalNativeBuild section to the build, so that the C++ library was switched to shared.
+
+<br clear="right" />
 
 # License
 
