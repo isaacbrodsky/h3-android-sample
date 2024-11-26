@@ -1,8 +1,6 @@
 # Sample application for H3-Java on Android
 
-<div style="float: right">
-    <img src="./Screenshot.png" width="270" alt="Hello world screenshot" />
-</div>
+<img align="right" src="./Screenshot.png" width="270" alt="Hello world screenshot" />
 
 [![Test](https://github.com/isaacbrodsky/h3-android-sample/actions/workflows/test.yaml/badge.svg)](https://github.com/isaacbrodsky/h3-android-sample/actions/workflows/test.yaml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
