@@ -1,11 +1,13 @@
 # Sample application for H3-Java on Android
 
+<div style="float: right">
+    <img src="./Screenshot.png" width="270" alt="Hello world screenshot" />
+</div>
+
 [![Test](https://github.com/isaacbrodsky/h3-android-sample/actions/workflows/test.yaml/badge.svg)](https://github.com/isaacbrodsky/h3-android-sample/actions/workflows/test.yaml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 This is a sample application for using H3-Java on Android. It was compiled with [v4.1.1]((https://github.com/uber/h3-java/releases/tag/v4.1.1)) (as of writing, the latest published version of h3-java.)
-
-<img src="./Screenshot.png" width="270" alt="Hello world screenshot" />
 
 ## Notes
 
