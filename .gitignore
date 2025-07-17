@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+app/src/main/jniLibs/arm64-v8a/libh3-java.so
+app/src/main/jniLibs/armeabi-v7a/libh3-java.so

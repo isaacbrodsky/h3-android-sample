@@ -4,9 +4,46 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+fun registerExtractSoTask(taskName: String, abiFolder: String, soPathInJar: String) {
+    tasks.register<Copy>(taskName) {
+        val dependencyJar = configurations["debugRuntimeClasspath"]
+            .incoming
+            .artifactView {
+                attributes {
+                    attribute(Attribute.of("artifactType", String::class.java), "jar")
+                }
+            }
+            .files
+            .find { it.name.contains("h3") }
+            ?: throw GradleException("h3 JAR not found in debugRuntimeClasspath")
+
+        from(zipTree(dependencyJar)) {
+            include(soPathInJar)
+            eachFile { path = name }
+        }
+        into("$projectDir/src/main/jniLibs/$abiFolder")
+    }
+}
+
+registerExtractSoTask("extractArm64LibFromJar", "arm64-v8a", "android-arm64/libh3-java.so")
+registerExtractSoTask("extractArmLibFromJar", "armeabi-v7a", "android-arm/libh3-java.so")
+
+tasks.named("preBuild") {
+    dependsOn("extractArm64LibFromJar", "extractArmLibFromJar")
+}
+
+tasks.named("clean") {
+    doLast {
+        delete("$projectDir/src/main/jniLibs/arm64-v8a/libh3-java.so")
+        delete("$projectDir/src/main/jniLibs/armeabi-v7a/libh3-java.so")
+    }
+}
+
 android {
     namespace = "com.isaacbrodsky.h3helloworld"
     compileSdk = 34
+    // Must be at least 28 for 16kb alignment to happen by default
+    ndkVersion = "28.2.13676358"
 
     defaultConfig {
         applicationId = "com.isaacbrodsky.h3helloworld"
