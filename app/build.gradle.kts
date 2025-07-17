@@ -4,6 +4,60 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+tasks.register<Copy>("extractArm64LibFromJar") {
+    val dependencyJar = configurations["debugRuntimeClasspath"]
+        .incoming
+        .artifactView {
+            attributes {
+                attribute(Attribute.of("artifactType", String::class.java), "jar")
+            }
+        }
+        .files
+        .find { it.name.contains("h3") }
+        ?: throw GradleException("h3 JAR not found in implementation configuration")
+
+    from(zipTree(dependencyJar)) {
+        include("android-arm64/libh3-java.so")
+        eachFile {
+            path = name
+        }
+    }
+    into("$projectDir/src/main/jniLibs/arm64-v8a")
+}
+
+tasks.register<Copy>("extractArmLibFromJar") {
+    val dependencyJar = configurations["debugRuntimeClasspath"]
+        .incoming
+        .artifactView {
+            attributes {
+                attribute(Attribute.of("artifactType", String::class.java), "jar")
+            }
+        }
+        .files
+        .find { it.name.contains("h3") }
+        ?: throw GradleException("h3 JAR not found in implementation configuration")
+
+    from(zipTree(dependencyJar)) {
+        include("android-arm/libh3-java.so")
+        eachFile {
+            path = name
+        }
+    }
+    into("$projectDir/src/main/jniLibs/armeabi-v7a")
+}
+
+tasks.named("preBuild") {
+    dependsOn("extractArm64LibFromJar")
+    dependsOn("extractArmLibFromJar")
+}
+
+tasks.named("clean") {
+    doLast {
+        delete("$projectDir/src/main/jniLibs/arm64-v8a/libh3-java.so")
+        delete("$projectDir/src/main/jniLibs/armeabi-v7a/libh3-java.so")
+    }
+}
+
 android {
     namespace = "com.isaacbrodsky.h3helloworld"
     compileSdk = 34
