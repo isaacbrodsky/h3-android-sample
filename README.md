@@ -9,7 +9,7 @@ This is a sample application for using H3-Java on Android. It was compiled with 
 
 **Notes**
 
-* It was necessary to manually copy the libh3-java.so files from the distributed JAR into the applicable jniLibs directories in the project.
+* It was necessary to automatically copy the libh3-java.so files from the distributed JAR into the applicable jniLibs directories in the project.
 * It was necessary to add an externalNativeBuild section to the build, so that the C++ library was switched to shared.
 
 <br clear="right" />
