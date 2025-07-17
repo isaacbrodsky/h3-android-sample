@@ -42,6 +42,8 @@ tasks.named("clean") {
 android {
     namespace = "com.isaacbrodsky.h3helloworld"
     compileSdk = 34
+    // Must be at least 28 for 16kb alignment to happen by default
+    ndkVersion = "28.2.13676358"
 
     defaultConfig {
         applicationId = "com.isaacbrodsky.h3helloworld"
