@@ -54,7 +54,6 @@ android {
         compose = true
     }
 
-    splits { abi { isEnable = false } }
     externalNativeBuild {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
